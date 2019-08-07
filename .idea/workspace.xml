@@ -6,7 +6,37 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="953dd0cb-ba3f-467b-a37f-085b7b756f92" name="Default Changelist" comment="" />
+    <list default="true" id="953dd0cb-ba3f-467b-a37f-085b7b756f92" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/actions/addProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/actions/delete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paths/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paths/admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paths/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paths/customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paths/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paths/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paths/register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paths/register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/validation/getUserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validation/getUserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/bin/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/bin/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/paths/register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/validation/getUserType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/validation/getUserType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/validation/loginCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/classes/validation/loginCheck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Shoppingsite/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bin/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bin/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/paths/admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/paths/admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/paths/customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/paths/customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/paths/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/paths/login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/paths/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/paths/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/paths/register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/paths/register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/validation/getUserType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validation/getUserType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/validation/loginCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validation/loginCheck.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +49,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -35,7 +68,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1P4NE7SRTvCNQVcvYwtJAK2fls9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
@@ -270,12 +307,23 @@
       <updated>1565129293755</updated>
       <workItem from="1565129297567" duration="465000" />
       <workItem from="1565129808454" duration="334000" />
-      <workItem from="1565130163057" duration="13097000" />
+      <workItem from="1565130163057" duration="27677000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Shoppingsite$Tomcat_8_5_43.ic" NAME="Tomcat 8.5.43 Coverage Results" MODIFIED="1565136313349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

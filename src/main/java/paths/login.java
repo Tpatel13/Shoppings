@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 
 
 public class login extends HttpServlet {
@@ -69,18 +70,19 @@ public class login extends HttpServlet {
         String password = request.getParameter("password");
 
         if (loginCheck.status(email, password)) {
-            String type = getUserType.getUserType(email);
+            HashMap type = getUserType.getUserType(email);
             HttpSession s=request.getSession();
 
-            if (type.equals("admin")) {
 
-                 s.setAttribute("type","admin");
-                response.sendRedirect("/admin");
-            } else if (type.equals("merchant")) {
-                s.setAttribute("type","merchant");
+            if (type.get("admin")!=null) {
+
+                 s.setAttribute("admin",type.get("admin"));
+                 response.sendRedirect("/admin");
+            } else if (type.get("merchant")!=null) {
+                s.setAttribute("merchant",type.get("merchant"));
                 response.sendRedirect("/merchant");
             } else {
-                s.setAttribute("type","customer");
+                s.setAttribute("customer",type.get("customer"));
                 response.sendRedirect("/customer");
             }
 

@@ -2,7 +2,6 @@ package paths;
 
 import bin.Products;
 
-import javax.jms.Session;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,20 +11,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.UUID;
 
-public class admin extends HttpServlet {
+public class merchant extends HttpServlet {
+    static ArrayList<Products> products = new ArrayList<>();
+    static String merchantID = null;
 
-  static    ArrayList<Products> products=new ArrayList<>();
     @Override
     public void init() throws ServletException {
         super.init();
-        getProducts();
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
@@ -33,8 +29,11 @@ public class admin extends HttpServlet {
         if (request.getSession() == null) {
             response.sendRedirect("/");
         }
+
         HttpSession session = request.getSession();
-        String adminId = session.getAttribute("admin").toString();
+        merchantID = session.getAttribute("merchant").toString();
+        getProducts();
+
 
         //Nav Header
         out.println("<HTML>\n" +
@@ -81,37 +80,64 @@ public class admin extends HttpServlet {
                 "    </div>\n" +
                 "  </nav>\n" +
                 "</div>");
-               out.println("\n" +
-                       "<div class=\"mx-auto\">\n" +
-                       "<table class=\"table\">\n" +
-                       "  <thead class=\"thead-dark\">\n" +
-                       "    <tr>\n" +
-                       "      <th scope=\"col\">#</th>\n" +
-                       "      <th scope=\"col\">Product Name</th>\n" +
-                       "      <th scope=\"col\">Product Description</th>\n" +
-                       "      <th scope=\"col\">Price</th>\n" +
-                       "      <th scope=\"col\">Merchant ID</th>\n" +
-                       "    </tr>\n" +
-                       "  </thead>\n" +
-                       "  <tbody>\n" );
+        out.println("\n" +
+                "<div class=\"mx-auto\">\n" +
+                "<table class=\"table\">\n" +
+                "  <thead class=\"thead-dark\">\n" +
+                "    <tr>\n" +
+                "      <th scope=\"col\">#</th>\n" +
+                "      <th scope=\"col\">Product Name</th>\n" +
+                "      <th scope=\"col\">Product Description</th>\n" +
+                "      <th scope=\"col\">Price</th>\n" +
+                "      <th scope=\"col\">Action</th>\n" +
+                "    </tr>\n" +
+                "  </thead>\n" +
+                "  <tbody>\n" );
 
-               products.forEach(element->{
-                   out.println("<tr>\n" +
-                           "      <th scope=\"row\">"+element.getId()+"</th>\n" +
-                           "      <td>"+element.getName()+"</td>\n" +
-                           "      <td>"+element.getDescription()+"</td>\n" +
-                           "      <td>"+element.getPrice()+"</td>\n" +
-                           "      <td>"+element.getMerchantID()+"</td>\n" +
-                           "   \n" +
-                           "    </tr>");
-               });
+        products.forEach(element->{
+            out.println("<tr>\n" +
+                    "      <th scope=\"row\">"+element.getId()+"</th>\n" +
+                    "      <td>"+element.getName()+"</td>\n" +
+                    "      <td>"+element.getDescription()+"</td>\n" +
+                    "      <td>"+element.getPrice()+"</td>\n" +
+                    "      <td><a href=\"delete?id="+element.getId()+"\">delete</a></td>\n" +
+                    "   \n" +
+                    "    </tr>");
+        });
 
-                       out.println("  </tbody>\n" +
-                       "</table>\n" +
-                       "</div>");
+        out.println("  </tbody>\n" +
+                "</table>\n\n" +
+                "<div class=\"container w-25\">\n" +
+                "<form action=\"addProduct\" method=\"post\">\n" +
+                "  <h3><span class=\"badge badge-secondary\">Add products</span></h3>\n" +
+                "  <div class=\"form-group\">\n" +
+                "  <label> Name</label>\n" +
+                "  <input class=\"form-control\" name=\"name\" type=\"text\">\n" +
+                "</div>\n" +
+                " \n" +
+                "  <div class=\"form-group\">\n" +
+                "    <label > Price</label>\n" +
+                "    <input class=\"form-control\" name=\"price\" type=\"text\">\n" +
+                "  </div> <div class=\"form-group\">\n" +
+                "      <label for=\"formGroupExampleInput\"> Description</label>\n" +
+                "      <input class=\"form-control h-25\" name=\"description\" type=\"text\">\n" +
+                " <input type=\"hidden\" value="+merchantID+" name=\"merchantID\">\n" +
+                "  </div>\n" +
+                "  <button type=\"submit\" class=\"btn btn-primary\">Add Product</button>\n" +
+                "</form>\n" +
+                "</div>" +
+                "</div></body>\n" +
+                "</HTML>");
+products=new ArrayList<>();
 
 
     }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+    }
+
 
     public void getProducts() {
 
@@ -122,11 +148,12 @@ public class admin extends HttpServlet {
             Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root154516");
 
 
-            String query = "select * from products";
+            String query = "select * from products where merchentID=?";
 
-            Statement statement = con.createStatement();
+            PreparedStatement statement = con.prepareStatement(query);
 
-            ResultSet result = statement.executeQuery(query);
+            statement.setString(1, merchantID);
+            ResultSet result = statement.executeQuery();
 
 
             while (result.next()) {
@@ -135,16 +162,13 @@ public class admin extends HttpServlet {
                 product.setName(result.getString("productname"));
                 product.setDescription(result.getString("productdescription"));
                 product.setPrice(result.getInt("price"));
-                product.setMerchantID(result.getString("merchentID"));
                 products.add(product);
+
             }
 
         } catch (Exception e) {
 
             e.printStackTrace();
         }
-
-
     }
-
 }

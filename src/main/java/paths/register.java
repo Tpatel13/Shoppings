@@ -146,13 +146,13 @@ public class register extends HttpServlet {
                 "            <input type=\"password\" class=\"form-control\" name=\"confirm_password\" placeholder=\"Confirm Password\" required=\"required\">\n" +
                 "        </div>        \n" +
                 "          \n" +
-                "                    \n" );
+                "                    \n");
         out.print("<div>&nbsp;\n" +
                 "\t\t&nbsp;\n" +
                 "\t\t<input type =\"radio\" name=\"type\" value=\"admin\">  Admin&nbsp;&nbsp;\n" +
                 "<input type =\"radio\" name=\"type\" value=\"customer\">  Customer&nbsp;&nbsp;\n" +
                 "<input type =\"radio\" name=\"type\" value=\"merchant\">  Merchant<br></div><br>");
-               out.println( "        <div class=\"form-group\">\n" +
+        out.println("        <div class=\"form-group\">\n" +
                 "\t\t\t<br><label class=\"checkbox-inline\"><input type=\"checkbox\" required=\"required\"> I accept the <a href=\"#\">Terms of Use</a> &amp; <a href=\"#\">Privacy Policy</a></label>\n" +
                 "\t\t</div>\n" +
                 "\t\t<div class=\"form-group\">\n" +
@@ -171,7 +171,7 @@ public class register extends HttpServlet {
         String fname = request.getParameter("first_name");
         String last_name = request.getParameter("last_name");
 
-        String address = request.getParameter("address");
+       // String address = request.getParameter("address");
         String phnumber = request.getParameter("phnumber");
         String email = request.getParameter("email");
         String type = request.getParameter("type");
@@ -190,8 +190,8 @@ public class register extends HttpServlet {
             String query = "insert into users(id,fname,lname,email,password,phone,type)" + "value(?,?,?,?,?,?,?)";
 
             PreparedStatement statement = con.prepareStatement(query);
-            UUID a=UUID.randomUUID();
-            statement.setString(1,a.toString());
+            UUID a = UUID.randomUUID();
+            statement.setString(1, a.toString());
             statement.setString(2, fname);
             statement.setString(3, last_name);
             statement.setString(4, email);

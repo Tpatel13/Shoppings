@@ -14,6 +14,8 @@
         <servlet-name>paths.login</servlet-name>
         <url-pattern></url-pattern>
     </servlet-mapping>
+
+
     <servlet>
         <servlet-name>paths.register</servlet-name>
         <servlet-class>paths.register</servlet-class>
@@ -22,6 +24,8 @@
         <servlet-name>paths.register</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+
+
     <servlet>
         <servlet-name>admin</servlet-name>
         <servlet-class>paths.admin</servlet-class>
@@ -30,6 +34,8 @@
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
     </servlet-mapping>
+
+
     <servlet>
         <servlet-name>customer</servlet-name>
         <servlet-class>paths.customer</servlet-class>
@@ -40,4 +46,33 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>merchant</servlet-name>
+        <servlet-class>paths.merchant</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>merchant</servlet-name>
+        <url-pattern>/merchant</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>actions.delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/delete/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>addProduct</servlet-name>
+        <servlet-class>actions.addProduct</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addProduct</servlet-name>
+        <url-pattern>/addProduct</url-pattern>
+    </servlet-mapping>
 </web-app>
